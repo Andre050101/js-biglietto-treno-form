@@ -15,47 +15,18 @@ Solo una volta che il milestone 1 sarà completo e funzionante allora realizzere
 Il recap dei dati e l'output del prezzo finale, andranno quindi stampati in pagina (il prezzo dovrà essere formattato con massimo due decimali, per indicare i centesimi sul prezzo). Questo richiederà un minimo di ricerca.
 */
 
-/*Variabili iniziali*/
-let nKm = document.getElementById("nKM").value;
-let eta = document.getElementById("eta").value; /*Età passeggero*/
-console.log(nKm);
-console.log(eta);
-/*Richiesta dati a utente e validazione dati pre calcolo (prezzo non può essere minore di 0 ed eta non può essere ne minore di 0 ne maggiore di 150)*/
-/*Richiesta e validazione numero km*/
-/*nKm = parseInt(prompt("Buongiorno, benvenuti da rapidTrain, quanti kilometri desidera percorrere?"));
-while(nKm < 0) {
-    console.log("Siamo spiacenti, il numero di kilometri indicato risulta minore di 0!");
-    nKm = parseInt(prompt("Quanti kilometri desidera percorrere?"));
+function calcolaPrezzo(){
+    const nKm = parseFloat(document.getElementById("nKM").value);
+    const eta = parseInt(document.getElementById("eta").value);
+    if (isNaN(nKm) || isNaN(eta) || nKm <= 0 || eta <= 0) {
+        console.log("Inserisci valori validi per chilometri e età.");
+        return;
+    }
+    let prezzo = 0.21 * nKm;
+    if(eta < 18) 
+        prezzo *= 0.8;
+    else if(eta > 65)
+        prezzo *= 0.6;
+    let prezzoFormattato = prezzo.toFixed(2);
+    console.log(prezzoFormattato);
 }
-
-/*Richiesta e validazione età*/
-/*eta = parseInt(prompt("Quanti anni ha? (Abbiamo uno sconto dedicato a minorenni ed un altro a over 65!)"));
-while(eta < 0 || eta > 150) {
-    console.log("Siamo spiacenti, l'età inserita risulta non valida!");
-    eta = parseInt(prompt("Per favore reinserisca la sua età"));
-}
-
-/*Calcolo del prezzo */
-/*let prezzo = 0.21 * nKm;/*Dichiarazione variabile prezzo e calcolo del valore di base (0.21 * nkm)*/
-
-/*Under-18
-if(eta < 18) {
-        console.log("Complimenti, appartiene alla fascia scontata under-18, ha diritto ad uno sconto del 20% sul prezzo del biglietto");
-        prezzo = prezzo * 0.8;
-}*/
-
-/* eta compresa tra 18 e 65 anni
-else if(eta >= 18 && eta <= 65)
-    console.log("Non appartiene a nessuna fascia scontata");
-*/
-/*Over-65
-else {
-    console.log("Complimenti, appartiene alla fascia scontata over-65, ha diritto ad uno sconto del 40% sul prezzo del biglietto");
-    prezzo = prezzo * 0.6;
-}
- */
-/*Formattazione prezzo con solo 2 cifre decimali
-let prezzoFormattato = prezzo.toFixed(2);
-*/
-/*Visualizzazione del risultato in console
-console.log("il prezzo del suo biglietto è "+prezzoFormattato+"€");*/
