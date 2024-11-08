@@ -16,45 +16,46 @@ Il recap dei dati e l'output del prezzo finale, andranno quindi stampati in pagi
 */
 
 /*Variabili iniziali*/
-let nKm; /*Numero km da percorrere*/
-let eta; /*Età passeggero*/
-
+let nKm = document.getElementById("nKM").value;
+let eta = document.getElementById("eta").value; /*Età passeggero*/
+console.log(nKm);
+console.log(eta);
 /*Richiesta dati a utente e validazione dati pre calcolo (prezzo non può essere minore di 0 ed eta non può essere ne minore di 0 ne maggiore di 150)*/
 /*Richiesta e validazione numero km*/
-nKm = parseInt(prompt("Buongiorno, benvenuti da rapidTrain, quanti kilometri desidera percorrere?"));
+/*nKm = parseInt(prompt("Buongiorno, benvenuti da rapidTrain, quanti kilometri desidera percorrere?"));
 while(nKm < 0) {
     console.log("Siamo spiacenti, il numero di kilometri indicato risulta minore di 0!");
     nKm = parseInt(prompt("Quanti kilometri desidera percorrere?"));
 }
 
 /*Richiesta e validazione età*/
-eta = parseInt(prompt("Quanti anni ha? (Abbiamo uno sconto dedicato a minorenni ed un altro a over 65!)"));
+/*eta = parseInt(prompt("Quanti anni ha? (Abbiamo uno sconto dedicato a minorenni ed un altro a over 65!)"));
 while(eta < 0 || eta > 150) {
     console.log("Siamo spiacenti, l'età inserita risulta non valida!");
     eta = parseInt(prompt("Per favore reinserisca la sua età"));
 }
 
 /*Calcolo del prezzo */
-let prezzo = 0.21 * nKm;/*Dichiarazione variabile prezzo e calcolo del valore di base (0.21 * nkm)*/
+/*let prezzo = 0.21 * nKm;/*Dichiarazione variabile prezzo e calcolo del valore di base (0.21 * nkm)*/
 
-/*Under-18*/
+/*Under-18
 if(eta < 18) {
         console.log("Complimenti, appartiene alla fascia scontata under-18, ha diritto ad uno sconto del 20% sul prezzo del biglietto");
         prezzo = prezzo * 0.8;
-}
+}*/
 
-/* eta compresa tra 18 e 65 anni*/
+/* eta compresa tra 18 e 65 anni
 else if(eta >= 18 && eta <= 65)
     console.log("Non appartiene a nessuna fascia scontata");
-
-/*Over-65*/
+*/
+/*Over-65
 else {
     console.log("Complimenti, appartiene alla fascia scontata over-65, ha diritto ad uno sconto del 40% sul prezzo del biglietto");
     prezzo = prezzo * 0.6;
 }
- 
-/*Formattazione prezzo con solo 2 cifre decimali*/
+ */
+/*Formattazione prezzo con solo 2 cifre decimali
 let prezzoFormattato = prezzo.toFixed(2);
-
-/*Visualizzazione del risultato in console*/
-console.log("il prezzo del suo biglietto è "+prezzoFormattato+"€");
+*/
+/*Visualizzazione del risultato in console
+console.log("il prezzo del suo biglietto è "+prezzoFormattato+"€");*/
