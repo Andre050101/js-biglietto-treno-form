@@ -16,17 +16,54 @@ Il recap dei dati e l'output del prezzo finale, andranno quindi stampati in pagi
 */
 
 function calcolaPrezzo(){
+    const nome = document.getElementById("nome").value;
     const nKm = parseFloat(document.getElementById("nKM").value);
-    const eta = parseInt(document.getElementById("eta").value);
-    if (isNaN(nKm) || isNaN(eta) || nKm <= 0 || eta <= 0) {
-        console.log("Inserisci valori validi per chilometri e età.");
+    const eta = document.getElementById("eta").value;
+    console.log(nome);
+    console.log(nKM);
+    console.log(eta);
+    if (!nome || isNaN(nKm) || nKm <= 0) {
+        alert("Per favore, inserisci tutti i dati correttamente.");
         return;
     }
     let prezzo = 0.21 * nKm;
-    if(eta < 18) 
+    let offerta = "Biglietto Standard";
+
+    if(eta === "minorenne"){
         prezzo *= 0.8;
-    else if(eta > 65)
+        offerta= "Sconto Minorenne";
+    }
+    else if(eta === "over65"){
         prezzo *= 0.6;
-    let prezzoFormattato = prezzo.toFixed(2);
-    console.log(prezzoFormattato);
+        offerta = "Sconto Over 65";
+    }
+        
+    const carrozza = Math.floor(Math.random() * 10) + 1; 
+    const codiceCP = Math.floor(Math.random() * 90000) + 10000; 
+
+    const dettagli = `
+    <table>
+      <tr>
+        <th>NOME PASSEGGERO</th>
+        <th>Offerta</th>
+        <th>Carrozza</th>
+        <th>Codice CP</th>
+        <th>Costo biglietto</th>
+      </tr>
+      <tr>
+        <td>${nome}</td>
+        <td>${offerta}</td>
+        <td>${carrozza}</td>
+        <td>${codiceCP}</td>
+        <td>${prezzo.toFixed(2)}€</td>
+      </tr>
+    </table>
+  `;
+  document.getElementById("dettagli-biglietto").innerHTML = dettagli;
 }
+function resetForm() {
+    document.getElementById("nome").value = "";
+    document.getElementById("km").value = "";
+    document.getElementById("fasciaEta").value = "maggiorenne";
+    document.getElementById("dettagli-biglietto").innerHTML = "";
+  }
