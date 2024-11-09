@@ -19,9 +19,6 @@ function calcolaPrezzo(){
     const nome = document.getElementById("nome").value;
     const nKm = parseFloat(document.getElementById("nKM").value);
     const eta = document.getElementById("eta").value;
-    console.log(nome);
-    console.log(nKM);
-    console.log(eta);
     if (!nome || isNaN(nKm) || nKm <= 0) {
         alert("Per favore, inserisci tutti i dati correttamente.");
         return;
@@ -42,28 +39,30 @@ function calcolaPrezzo(){
     const codiceCP = Math.floor(Math.random() * 90000) + 10000; 
 
     const dettagli = `
-    <table>
-      <tr>
-        <th>NOME PASSEGGERO</th>
-        <th>Offerta</th>
-        <th>Carrozza</th>
-        <th>Codice CP</th>
-        <th>Costo biglietto</th>
-      </tr>
-      <tr>
-        <td>${nome}</td>
-        <td>${offerta}</td>
-        <td>${carrozza}</td>
-        <td>${codiceCP}</td>
-        <td>${prezzo.toFixed(2)}€</td>
-      </tr>
-    </table>
+    <h2>IL TUO BIGLIETTO</h2>
+      
+        <table>
+          <tr>
+            <th>NOME PASSEGGERO</th>
+            <th>Offerta</th>
+            <th>Carrozza</th>
+            <th>Codice CP</th>
+            <th>Costo biglietto</th>
+          </tr>
+          <tr>
+            <td>${nome}</td>
+            <td>${offerta}</td>
+            <td>${carrozza}</td>
+            <td>${codiceCP}</td>
+            <td>${prezzo.toFixed(2)}€</td>
+          </tr>
+        </table>
   `;
   document.getElementById("dettagli-biglietto").innerHTML = dettagli;
 }
 function resetForm() {
     document.getElementById("nome").value = "";
-    document.getElementById("km").value = "";
-    document.getElementById("fasciaEta").value = "maggiorenne";
+    document.getElementById("nKM").value = "";
+    document.getElementById("eta").value = "";
     document.getElementById("dettagli-biglietto").innerHTML = "";
   }

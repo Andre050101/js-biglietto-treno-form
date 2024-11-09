@@ -8,17 +8,17 @@
         <title>Calcolo del prezzo del biglietto del treno</title>
     </head>
     <body class="container-fluid">
-        
         <h2>Calcola il prezzo del tuo biglietto</h1>
         <div class="ticket-form">
-            <label for="nome">Nome Cognome</label>
-            <input type="text" id="nome" placeholder="Nome Cognome">
+            <label for="nome">Nome e Cognome:</label>
+            <input type="text" id="nome" placeholder="Nome e Cognome">
             
             <label for="nKM">Chilometri da percorrere:</label>
             <input type="number" name="numeroKM" id="nKM" placeholder="Numero di kilometri da effettuare">
 
             <label for="eta">Fascia d'età</label>
             <select name="" id="eta">
+                <option value="" disabled selected>Seleziona la fascia d'età</option>
                 <option value="minorenne">Junior</option>
                 <option value="maggiorenne">Adult</option>
                 <option value="over65">Senior</option>
@@ -30,7 +30,6 @@
             </div>
         </div>
 
-        <h2>IL TUO BIGLIETTO</h2>
         <div class="ticket-output">
             <div id="dettagli-biglietto"></div>
         </div>

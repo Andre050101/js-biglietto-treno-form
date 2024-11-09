@@ -14,17 +14,18 @@ body {
     text-align: center;
   }
   
-  h1, h2 {
+  h2 {
     color: #ffffff;
     text-transform: uppercase;
+    padding-top: 30px;
   }
   
   .ticket-form, .ticket-output {
     background-color: #ffffff;
     padding: 20px;
     margin: 20px auto;
-    border-radius: 8px;
-    max-width: 600px;
+    border-radius: 10px;
+    max-width: 700px;
     color: #333;
   }
   
@@ -67,13 +68,14 @@ body {
   
   #dettagli-biglietto {
     padding: 10px;
-    border: 1px solid #333;
   }
   
   table {
     width: 100%;
     margin-top: 10px;
     border-collapse: collapse;
+    background-color: white;
+    color: black;
   }
   
   th, td {
